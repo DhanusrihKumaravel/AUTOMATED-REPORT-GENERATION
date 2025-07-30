@@ -47,3 +47,5 @@ This project is highly applicable across various domains, including:
 * Education: Creating automated academic performance and attendance summaries.
 * Healthcare: Compiling patient statistics or treatment reports.
 * IT and Operations: Monitoring system performance and service-level reports.
+
+  OUTPUT:[generated_report.pdf](https://github.com/user-attachments/files/21508828/generated_report.pdf)
