@@ -1,0 +1,24 @@
+import pandas as pd
+from fpdf import FPDF
+
+data = pd.read_csv("sample_data.csv")
+
+summary = data.describe()
+
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=14)
+pdf.cell(200, 10, txt="Automated Report", ln=True, align='C')
+pdf.ln(10)
+
+pdf.set_font("Arial", size=12)
+for col in summary.columns:
+    pdf.cell(200, 10, txt=f"Column: {col}", ln=True)
+    for stat in summary.index:
+        value = summary.loc[stat, col]
+        pdf.cell(200, 10, txt=f"   {stat}: {value:.2f}", ln=True)
+
+pdf.output("generated_report.pdf")
+
+print("PDF report generated successfully!")
+
